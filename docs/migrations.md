@@ -211,7 +211,7 @@ is a JSON-compatible Python `dict` that corresponds to the block's schema.
 
 These functions, defined in `v1.util.migrations`,
 are used in the above data migration example. 
-They reduce the amount of boiler-plate required in data migrations 
+They reduce the amount of boilerplate required
 to work with Wagtail StreamField data in data migrations.
 
 #### `migrate_page_types_and_fields(apps, page_types_and_fields, mapper)`
