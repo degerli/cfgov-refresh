@@ -11,6 +11,8 @@ const closeIcon = require(
   'svg-inline-loader!../../../../node_modules/cf-icons/src/icons/close.svg'
 );
 
+const BASE_CLASS = 'o-multiselect';
+
 /**
  * Multiselect
  * @class
@@ -23,7 +25,6 @@ const closeIcon = require(
  */
 function Multiselect( element ) { // eslint-disable-line max-statements, inline-comments, max-len
 
-  const BASE_CLASS = 'o-multiselect';
   const LIST_CLASS = 'm-list';
   const CHECKBOX_INPUT_CLASS = 'a-checkbox';
   const TEXT_INPUT_CLASS = 'a-text-input';
@@ -497,5 +498,7 @@ function Multiselect( element ) { // eslint-disable-line max-statements, inline-
 
   return this;
 }
+
+Multiselect.BASE_CLASS = BASE_CLASS;
 
 export default Multiselect;
