@@ -78,8 +78,11 @@ def get_stream_data(page_or_revision, field_name):
         stream_data = stream_block.get_prep_value(field)
     else:
         revision_content = json.loads(page_or_revision.content_json)
-        field = revision_content[field_name]
-        stream_data = json.loads(field)
+        if revision_content.get(field_name):
+            field = revision_content[field_name]
+            stream_data = json.loads(field)
+        else:
+            stream_data = []
 
     return stream_data
 
@@ -114,6 +117,9 @@ def migrate_stream_data(page_or_revision, block_path, stream_data, mapper):
         return stream_data, False
 
     block_name = block_path.pop(0)
+
+    if page_or_revision.pk == 11358:
+        import pdb; pdb.set_trace()
 
     for field in stream_data:
         if field['type'] == block_name:
